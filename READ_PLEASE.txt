@@ -1,0 +1,15 @@
+The file gives the template, how to pass User parameters to my code.
+Doing this as I faced an issue, that the database generates different
+names for my columns, not as these in the code.
+Don't know why is it so, perhaps you will explane me.
+This attachment is relevant for the 2nd stage as well.
+The template looks as follows:
+
+{
+	"login":"your login",
+	"firstName":"your first name",
+	"lastName":"your last name",
+	"dateOfBirth":"1999-03-03",
+	"isActive": true/false
+}
+

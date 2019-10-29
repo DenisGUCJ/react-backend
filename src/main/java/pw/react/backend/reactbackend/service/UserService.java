@@ -6,9 +6,11 @@ import pw.react.backend.reactbackend.entity.User;
 import pw.react.backend.reactbackend.repository.UserRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
+
     @Autowired
     private UserRepository usersRepository;
 
@@ -22,4 +24,16 @@ public class UserService {
         return null;
     }
 
+    public void delete(User userToDelete) {
+        usersRepository.delete(userToDelete);
+    }
+
+    public User save(User user) {
+        return usersRepository.save(user);
+    }
+
+    public User findById(Long id){
+        Optional<User> user= usersRepository.findById(id);
+        return user.isPresent() ? user.get() : null;
+    }
 }

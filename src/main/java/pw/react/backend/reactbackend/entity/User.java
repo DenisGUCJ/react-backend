@@ -7,9 +7,10 @@ import java.util.Date;
 @Table(name = "Users")
 public class User {
 
+    @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @Column(name = "login")
     private String login;
@@ -36,11 +37,16 @@ public class User {
        this.is_active=is_active;
     }
 
-    public int getId() {
-        return id;
+    public void setUser(String login, String first_name, String last_name, Date date_of_birth, boolean active) {
+        setLogin(login);
+        setFirstName(first_name);
+        setLastName(last_name);
+        setDateOfBirth(date_of_birth);
+        setIsActive(active);
     }
-    public void setId(int id) {
-        this.id = id;
+
+    public Long getId() {
+        return id;
     }
     public String getLogin() {
         return login;
